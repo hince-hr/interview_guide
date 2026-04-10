@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>면접 질문 가이드</title>
+<title>비바웨이브 면접 질문 가이드</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -195,6 +195,7 @@ body {
 .tab:hover { background: var(--surface2); border-color: #C8C8D8; }
 
 /* category tabs */
+.tab.cat-all.active { background: #1A1A2E; border-color: #1A1A2E; color: #FFF; }
 .tab.cat-perf.active { background: var(--perf-light); border-color: var(--perf); color: #4B2FCA; }
 .tab.cat-rel.active  { background: var(--rel-light);  border-color: var(--rel);  color: #0B6147; }
 .tab.cat-adapt.active{ background: var(--adapt-light);border-color: var(--adapt);color: #164E9A; }
@@ -422,13 +423,13 @@ mark.highlight {
   <!-- Header -->
   <div class="header">
     <div class="header-title">🎙 비바웨이브 면접 질문 가이드</div>
-    <div class="header-sub">면접 진행 중, 역량별/경력별 질문을 탭 선택 또는 검색으로 바로 찾아보실 수 있습니다</div>
+    <div class="header-sub">이 페이지는 면접관님들을 위해 만들었습니다. <br> 역량별 / 경력별 카테고리를 구분해놨으니, 면접 진행 도중 질문이 생각나지 않을 때, 카테고리 탭 선택 또는 검색으로 찾아보세요!</div>
   </div>
 
   <!-- STAR Tip -->
   <div class="tip-box">
     <span class="tip-icon">💡</span>
-    <span class="tip-text">답변이 추상적이면 <strong>"그 상황에서 본인이 구체적으로 어떤 행동을 했나요?"</strong> 로 꼬리질문 → <strong>STAR</strong>(상황 → 과제 → 행동 → 결과) 흐름으로 유도하세요.</span>
+    <span class="tip-text">답변이 추상적이면 그냥 넘기지 마세요. <br>  <strong>"그 상황에서 본인이 구체적으로 어떤 행동을 했나요?"</strong> 로 꼬리질문 후 <strong>STAR</strong>(상황 → 과제 → 행동 → 결과) 흐름으로 유도하세요.</span>
   </div>
 
   <!-- Search -->
@@ -442,11 +443,11 @@ mark.highlight {
   <div class="tab-section">
     <div class="tab-section-label">역량 카테고리 필터</div>
     <div class="tab-group" id="catTabs">
-      <button class="tab"                 data-cat="all">전체</button>
-      <button class="tab cat-perf active" data-cat="perf">🎯 성과역량</button>
-      <button class="tab cat-rel"         data-cat="rel">🤝 관계역량</button>
-      <button class="tab cat-adapt"       data-cat="adapt">🔄 적응역량</button>
-      <button class="tab cat-lead"        data-cat="lead">🌟 리더십역량</button>
+      <button class="tab cat-all active"  data-cat="all">전체</button>
+      <button class="tab cat-perf"        data-cat="perf">🎯 업무능력·성과</button>
+      <button class="tab cat-rel"         data-cat="rel">🤝 커뮤니케이션·협업</button>
+      <button class="tab cat-adapt"       data-cat="adapt">🔄 책임감·태도</button>
+      <button class="tab cat-lead"        data-cat="lead">🌟 리더십</button>
       <button class="tab cat-color"       data-cat="color">🎨 색조 인사이트</button>
       <button class="tab cat-motive"      data-cat="motive">💬 지원동기</button>
     </div>
@@ -457,10 +458,10 @@ mark.highlight {
     <div class="tab-section-label">추천 대상 필터</div>
     <div class="tab-group" id="tgtTabs">
       <button class="tab tgt active" data-tgt="all">전체</button>
-      <button class="tab tgt" data-tgt="인턴">🌱 인턴·주니어</button>
+      <button class="tab tgt" data-tgt="인턴">🌱 인턴·신입</button>
       <button class="tab tgt" data-tgt="경력">💼 경력</button>
-      <button class="tab tgt" data-tgt="리더">👑 리더·리더급</button>
-      <button class="tab tgt" data-tgt="전직군">✅ 전 직군 공통</button>
+      <button class="tab tgt" data-tgt="리더">👑 리더</button>
+      <button class="tab tgt" data-tgt="공통">✅ 공통</button>
     </div>
   </div>
 
@@ -479,9 +480,9 @@ mark.highlight {
 <script>
 // ─── Data ───────────────────────────────────────────────────────────────────
 const DATA = [
-  // ── 성과역량 ──
+  // ── 업무능력·성과 ──
   {
-    cat: 'perf', catLabel: '성과역량',
+    cat: 'perf', catLabel: '업무능력·성과',
     name: '긍정성', def: '어떤 상황에서도 희망적인 생각·말·행동을 선택하는 태도',
     main: [
       '다른 사람들과 일을 할 때, 많은 사람들이 포기하려던 상황에서 본인은 어떻게 행동했는지 말씀해 주세요.',
@@ -493,11 +494,11 @@ const DATA = [
       '본인의 행동이 주변 사람들에게 어떤 영향을 미쳤나요?',
       '어려움을 극복하면서 새롭게 얻은 깨달음이 있다면요?'
     ],
-    targets: ['인턴·주니어 — 학교·팀 프로젝트 경험 중심', '경력 — 위기 돌파·분위기 전환 사례 심화'],
+    targets: ['인턴·신입 — 학교·팀 프로젝트 경험 중심', '경력 — 위기 돌파·분위기 전환 사례 심화'],
     tgtKeys: ['인턴', '경력']
   },
   {
-    cat: 'perf', catLabel: '성과역량',
+    cat: 'perf', catLabel: '업무능력·성과',
     name: '성취갈망', def: '끊임없이 무언가를 이루고자 하는 마음',
     main: [
       '오랫동안 이루고자 했던 목표가 있다면 말씀해 주세요. 현재 그것을 달성했나요?',
@@ -509,11 +510,11 @@ const DATA = [
       '목표를 이루기 위해 어떤 노력을 계획하고 있나요?',
       '목표를 달성하지 못한다면 어떻게 하시겠어요?'
     ],
-    targets: ['인턴·주니어 — 학업·자격증·대외활동 개인 목표 탐색', '경력 — 커리어 목표·성과 지향성 파악'],
+    targets: ['인턴·신입 — 학업·자격증·대외활동 개인 목표 탐색', '경력 — 커리어 목표·성과 지향성 파악'],
     tgtKeys: ['인턴', '경력']
   },
   {
-    cat: 'perf', catLabel: '성과역량',
+    cat: 'perf', catLabel: '업무능력·성과',
     name: '열정', def: '동기 부여 시 성과 중심으로 몰입하는 정서적 에너지',
     main: [
       '자신의 경험 중에서 열정을 쏟은 경험에 대해 말씀해 주시기 바랍니다.',
@@ -525,11 +526,11 @@ const DATA = [
       '그 결과는 어떠했나요?',
       '열정을 갖게 되는 본인만의 동기 요인이 있다면요?'
     ],
-    targets: ['전 직군 — 직무 연관 열정 경험 유도', '경력 — 내재 동기 파악에 효과적'],
-    tgtKeys: ['전직군', '경력']
+    targets: ['공통 — 직무 연관 열정 경험 유도', '경력 — 내재 동기 파악에 효과적'],
+    tgtKeys: ['공통', '경력']
   },
   {
-    cat: 'perf', catLabel: '성과역량',
+    cat: 'perf', catLabel: '업무능력·성과',
     name: '기획력', def: '목적·우선순위·추진 과정·장애물 극복 역량',
     main: [
       '타인과 함께 장기 프로젝트를 진행해 성공했던 경험을 말씀해 주세요. 진행 과정 중심으로요.',
@@ -541,11 +542,11 @@ const DATA = [
       '진행과정 계획에서 가장 중요하게 생각한 사항은요?',
       '본인의 역할을 구체적으로 말씀해 주세요.'
     ],
-    targets: ['경력·PM·기획 직군 — 구조화 능력 핵심 검증', '인턴·주니어 — 학교 팀 과제·대외활동으로 유도'],
+    targets: ['경력·PM·기획 직군 — 구조화 능력 핵심 검증', '인턴·신입 — 학교 팀 과제·대외활동으로 유도'],
     tgtKeys: ['경력', '인턴']
   },
   {
-    cat: 'perf', catLabel: '성과역량',
+    cat: 'perf', catLabel: '업무능력·성과',
     name: '정보관리력', def: '정보 수집·분류·관리로 업무 효율성을 높이는 역량',
     main: [
       '팀 과제를 하면서 자신만의 노하우를 활용해 성공 또는 실패했던 경험을 말씀해 주세요.',
@@ -560,7 +561,7 @@ const DATA = [
     tgtKeys: ['경력']
   },
   {
-    cat: 'perf', catLabel: '성과역량',
+    cat: 'perf', catLabel: '업무능력·성과',
     name: '문제해결력', def: '근본 원인과 대안을 분석해 해결책을 제시하는 역량',
     main: [
       '무언가를 성취하려 도전했다가 실패했다고 생각하는 사례를 말씀해 주세요. 왜 실패했는지도 함께요.',
@@ -572,11 +573,11 @@ const DATA = [
       '실패의 원인을 어떻게 파악했나요?',
       '그 경험을 통해 무엇을 배울 수 있었나요?'
     ],
-    targets: ['전 직군 — 사고방식 검증에 탁월', '경력 — 원인 분석 깊이·재발 방지 노력까지'],
-    tgtKeys: ['전직군', '경력']
+    targets: ['공통 — 사고방식 검증에 탁월', '경력 — 원인 분석 깊이·재발 방지 노력까지'],
+    tgtKeys: ['공통', '경력']
   },
   {
-    cat: 'perf', catLabel: '성과역량',
+    cat: 'perf', catLabel: '업무능력·성과',
     name: '성실성', def: '맡은 일에 최선을 다해 꾸준히 노력하는 태도',
     main: [
       '아무도 알아주지 않는 일이었지만, 자신이 맡은 일이었기 때문에 묵묵히 수행했던 경험을 말씀해 주세요.',
@@ -587,11 +588,11 @@ const DATA = [
       '그 결과는 어떠했나요?',
       '보람이 없거나 인정받지 못해도 계속할 수 있었던 이유는요?'
     ],
-    targets: ['인턴·주니어 — 기본기 태도 검증', '운영·지원 직군 — 반복 업무 성실성 파악'],
+    targets: ['인턴·신입 — 기본기 태도 검증', '운영·지원 직군 — 반복 업무 성실성 파악'],
     tgtKeys: ['인턴']
   },
   {
-    cat: 'perf', catLabel: '성과역량',
+    cat: 'perf', catLabel: '업무능력·성과',
     name: '끈기', def: '완수까지 포기하지 않고 끈질기게 실행하는 역량',
     main: [
       '끈기를 가지고 끝까지 수행했던 경험을 말씀해 주세요.',
@@ -602,11 +603,11 @@ const DATA = [
       '포기하지 않고 끝까지 수행한 이유는 무엇인가요?',
       '어려운 순간을 극복하는 본인만의 방법이 있나요?'
     ],
-    targets: ['전 직군 — 어떤 직무에서도 높은 검증 효과', '장기 프로젝트 포지션 — 특히 유효'],
-    tgtKeys: ['전직군']
+    targets: ['공통 — 어떤 직무에서도 높은 검증 효과', '장기 프로젝트 포지션 — 특히 유효'],
+    tgtKeys: ['공통']
   },
   {
-    cat: 'perf', catLabel: '성과역량',
+    cat: 'perf', catLabel: '업무능력·성과',
     name: '실행력', def: '계획을 머뭇거림 없이 행할 수 있는 능력',
     main: [
       '팀 프로젝트를 할 때, 다른 구성원들이 적극적으로 참여하지 않아 일의 진척이 없었던 경험을 말씀해 주세요.',
@@ -617,11 +618,11 @@ const DATA = [
       '그런 상황이 발생한 원인이 무엇이라고 생각하나요?',
       '결과는 어떻게 됐나요?'
     ],
-    targets: ['경력·리더 포지션 — 실행 주도력 파악', '인턴·주니어 — 개인 실행력 사례로 조정'],
+    targets: ['경력·리더 포지션 — 실행 주도력 파악', '인턴·신입 — 개인 실행력 사례로 조정'],
     tgtKeys: ['경력', '리더', '인턴']
   },
   {
-    cat: 'perf', catLabel: '성과역량',
+    cat: 'perf', catLabel: '업무능력·성과',
     name: '창의력', def: '발상의 전환이 자유롭고 참신한 해결책을 찾는 역량',
     main: [
       '남들과 다른 새로운 아이디어를 통해 문제를 해결했던 경험을 말씀해 주세요.',
@@ -636,7 +637,7 @@ const DATA = [
     tgtKeys: ['경력']
   },
   {
-    cat: 'perf', catLabel: '성과역량',
+    cat: 'perf', catLabel: '업무능력·성과',
     name: '성과관리력', def: '계획 대비 진척을 확인하고 장애물을 극복하는 역량',
     main: [
       '계획을 달성하기 위해 지속적으로 행동과 계획을 점검했던(자기점검) 경험을 말씀해 주세요.',
@@ -651,7 +652,7 @@ const DATA = [
     tgtKeys: ['경력', '리더']
   },
   {
-    cat: 'perf', catLabel: '성과역량',
+    cat: 'perf', catLabel: '업무능력·성과',
     name: '전문 지식·기술', def: '해당 분야 지식·기술·경험을 업무에 활용하는 역량',
     main: [
       '지원하신 직무(분야)에서 일을 하기 위해 노력했던 경험을 말씀해 주세요.',
@@ -662,13 +663,13 @@ const DATA = [
       '지원하신 직무에서 어떤 일을 하는지 어떻게 이해하고 계신가요?',
       '지속적으로 자기개발을 하기 위한 구체적인 계획이 있나요?'
     ],
-    targets: ['전 직군 필수 — 직무 이해도·전문성 수준 확인', '신입 — 스펙보다 학습 태도·방향성 중심'],
-    tgtKeys: ['전직군', '인턴']
+    targets: ['공통 필수 — 직무 이해도·전문성 수준 확인', '신입 — 스펙보다 학습 태도·방향성 중심'],
+    tgtKeys: ['공통', '인턴']
   },
 
-  // ── 관계역량 ──
+  // ── 커뮤니케이션·협업 ──
   {
-    cat: 'rel', catLabel: '관계역량',
+    cat: 'rel', catLabel: '커뮤니케이션·협업',
     name: '고객지향성', def: '고객 욕구를 파악·분석해 기대를 충족시키는 역량',
     main: [
       '상대방의 입장에서 생각하기 위해 노력하고 신뢰를 얻었던 경험을 말씀해 주세요.',
@@ -680,10 +681,10 @@ const DATA = [
       '신뢰를 얻는 데 도움이 된 구체적 행동은 무엇인가요?'
     ],
     targets: ['CS·영업·서비스 직군 — 필수 역량', '내부 협업 직군 — \'내부 고객\' 관점으로 변형'],
-    tgtKeys: ['전직군']
+    tgtKeys: ['공통']
   },
   {
-    cat: 'rel', catLabel: '관계역량',
+    cat: 'rel', catLabel: '커뮤니케이션·협업',
     name: '설득력', def: '생각을 체계화하고 확신 있게 전달해 공감을 얻는 역량',
     main: [
       '설득력을 발휘하여 자신의 의견대로 일을 수행했던 경험을 말씀해 주세요.',
@@ -698,7 +699,7 @@ const DATA = [
     tgtKeys: ['리더', '경력']
   },
   {
-    cat: 'rel', catLabel: '관계역량',
+    cat: 'rel', catLabel: '커뮤니케이션·협업',
     name: '의사소통력', def: '핵심을 파악하고 의견을 효과적으로 표현·이해시키는 역량',
     main: [
       '친구나 동료에게 무언가를 가르쳐 주었던 경험에 대하여 말씀해 주시기 바랍니다.',
@@ -709,11 +710,11 @@ const DATA = [
       '상대가 이해하지 못했을 때 어떻게 방식을 바꿨나요?',
       '청중이나 상대의 특성에 따라 소통 방법을 어떻게 조정했나요?'
     ],
-    targets: ['전 직군 — 어떤 직무에도 필수 검증 역량', '리더 — 방향 공유·설명 능력까지 확장'],
-    tgtKeys: ['전직군', '리더']
+    targets: ['공통 — 어떤 직무에도 필수 검증 역량', '리더 — 방향 공유·설명 능력까지 확장'],
+    tgtKeys: ['공통', '리더']
   },
   {
-    cat: 'rel', catLabel: '관계역량',
+    cat: 'rel', catLabel: '커뮤니케이션·협업',
     name: '능동성', def: '타인에 의존하지 않고 스스로 맡은 일을 처리하는 태도',
     main: [
       '도움이 필요한 상황임에도 스스로 노력하여 성취한 경험을 말씀해 주세요.',
@@ -724,11 +725,11 @@ const DATA = [
       '만약 도움을 받았다면 어떤 점이 달라졌을 것 같나요?',
       '이 경험을 통해 무엇을 배웠나요?'
     ],
-    targets: ['스타트업·소규모 팀 — 자기 주도 업무 처리', '인턴·주니어 — 기본 태도·의지 파악'],
+    targets: ['스타트업·소규모 팀 — 자기 주도 업무 처리', '인턴·신입 — 기본 태도·의지 파악'],
     tgtKeys: ['인턴']
   },
   {
-    cat: 'rel', catLabel: '관계역량',
+    cat: 'rel', catLabel: '커뮤니케이션·협업',
     name: '유연성', def: '자신의 의견에 집착하지 않고 타인의 합리적 의견을 수용하는 역량',
     main: [
       '자신의 의견과 반대되는 타인의 의견을 수용했던 경험을 말씀해 주세요.',
@@ -743,7 +744,7 @@ const DATA = [
     tgtKeys: ['경력']
   },
   {
-    cat: 'rel', catLabel: '관계역량',
+    cat: 'rel', catLabel: '커뮤니케이션·협업',
     name: '협력성', def: '협조적이고 결정된 일에 적극 참여하는 역량',
     main: [
       '구성원들과 다른 생각을 가졌지만 타인의 의견을 수용하고 함께 일을 수행했던 경험을 말씀해 주세요.',
@@ -755,10 +756,10 @@ const DATA = [
       '일의 결과는 어떠했나요?'
     ],
     targets: ['팀 프로젝트 직군 — 협업 태도 핵심 검증', '갈등 경험 파악 — 상황 탐색에 유효'],
-    tgtKeys: ['전직군']
+    tgtKeys: ['공통']
   },
   {
-    cat: 'rel', catLabel: '관계역량',
+    cat: 'rel', catLabel: '커뮤니케이션·협업',
     name: '협상력', def: '갈등 상황에서 서로가 수용할 대안을 이끌어내는 역량',
     main: [
       '개인이나 집단과의 의견 갈등을 해결했던 경험에 대해 말씀해 주세요.',
@@ -773,9 +774,9 @@ const DATA = [
     tgtKeys: ['리더', '경력']
   },
 
-  // ── 적응역량 ──
+  // ── 책임감·태도 ──
   {
-    cat: 'adapt', catLabel: '적응역량',
+    cat: 'adapt', catLabel: '책임감·태도',
     name: '규범성', def: '사회적 규범과 질서를 엄수하는 태도',
     main: [
       '자신의 생각과 다른 규범이나 규칙을 지켰던 경험을 말씀해 주세요.',
@@ -790,7 +791,7 @@ const DATA = [
     tgtKeys: ['경력']
   },
   {
-    cat: 'adapt', catLabel: '적응역량',
+    cat: 'adapt', catLabel: '책임감·태도',
     name: '책임감', def: '자신의 역할을 인식하고 끝까지 목표를 완수하려는 태도',
     main: [
       '지금까지의 경험 중에서 자신의 책임감을 가장 잘 보여주는 사례를 말씀해 주세요.',
@@ -801,11 +802,11 @@ const DATA = [
       '당시 상황과 본인의 실제 행동을 구체적으로 말씀해 주세요.',
       '행동의 결과는 어떠했나요?'
     ],
-    targets: ['전 직군 — 기본 태도 검증 필수', '단독 업무 비중 높은 포지션 — 자기 완결성'],
-    tgtKeys: ['전직군']
+    targets: ['공통 — 기본 태도 검증 필수', '단독 업무 비중 높은 포지션 — 자기 완결성'],
+    tgtKeys: ['공통']
   },
   {
-    cat: 'adapt', catLabel: '적응역량',
+    cat: 'adapt', catLabel: '책임감·태도',
     name: '모범성', def: '조직 생활에서 타인의 본보기가 되는 태도와 자세',
     main: [
       '다른 사람에게 모범을 보였던 행동이나 경험에 대하여 말씀해 주세요.',
@@ -815,11 +816,11 @@ const DATA = [
     follow: [
       '해당 경험을 통해 스스로 생겨난 변화는 무엇인가요?'
     ],
-    targets: ['시니어·리더급 — 조직 내 비공식 영향력 파악', '인턴·주니어 — 기본 직업윤리·태도 확인'],
+    targets: ['시니어·리더급 — 조직 내 비공식 영향력 파악', '인턴·신입 — 기본 직업윤리·태도 확인'],
     tgtKeys: ['리더', '인턴']
   },
   {
-    cat: 'adapt', catLabel: '적응역량',
+    cat: 'adapt', catLabel: '책임감·태도',
     name: '스트레스 내성', def: '압박 상황에서도 평정을 잃지 않고 일관성을 유지하는 역량',
     main: [
       '자신이 맡은 일이나 과제 때문에 스트레스나 압박을 받았던 경험을 말씀해 주세요.',
@@ -831,10 +832,10 @@ const DATA = [
       '그 노하우를 통해 비슷한 압박 상황을 극복했던 사례가 있나요?'
     ],
     targets: ['고강도 업무 포지션 — 데드라인·멀티태스킹 적합성', '고객 대응·현장직 — 자기관리 파악'],
-    tgtKeys: ['전직군', '경력']
+    tgtKeys: ['공통', '경력']
   },
   {
-    cat: 'adapt', catLabel: '적응역량',
+    cat: 'adapt', catLabel: '책임감·태도',
     name: '스트레스 복원력', def: '스트레스 후 빠르게 회복해 원래 상태로 돌아오는 역량',
     main: [
       '스트레스나 압박을 받은 이후 빠르게 회복하고 다시 업무에 집중했던 경험을 말씀해 주세요.',
@@ -849,9 +850,9 @@ const DATA = [
     tgtKeys: ['경력']
   },
 
-  // ── 리더십역량 ──
+  // ── 리더십 ──
   {
-    cat: 'lead', catLabel: '리더십역량',
+    cat: 'lead', catLabel: '리더십',
     name: '통합조정력', def: '다양한 이해관계자 의견을 조율해 공동 목표를 달성하는 역량',
     main: [
       '다양한 입장을 가진 사람들 사이에서 의견을 조율하고 공동의 방향으로 이끌었던 경험을 말씀해 주세요.',
@@ -866,7 +867,7 @@ const DATA = [
     tgtKeys: ['리더']
   },
   {
-    cat: 'lead', catLabel: '리더십역량',
+    cat: 'lead', catLabel: '리더십',
     name: '비전제시력', def: '조직 방향을 설정하고 구성원에게 영감을 주는 역량',
     main: [
       '팀이나 그룹을 이끌면서 구성원들에게 명확한 방향을 제시했던 경험을 말씀해 주세요.',
@@ -881,7 +882,7 @@ const DATA = [
     tgtKeys: ['리더']
   },
   {
-    cat: 'lead', catLabel: '리더십역량',
+    cat: 'lead', catLabel: '리더십',
     name: '변화촉진력', def: '조직 내 변화를 주도하고 구성원이 받아들이도록 이끄는 역량',
     main: [
       '기존 방식을 바꾸는 것을 주도하거나 변화를 이끌었던 경험을 말씀해 주세요.',
@@ -896,7 +897,7 @@ const DATA = [
     tgtKeys: ['리더']
   },
   {
-    cat: 'lead', catLabel: '리더십역량',
+    cat: 'lead', catLabel: '리더십',
     name: '업무위임력', def: '적절한 사람에게 업무를 맡기고 결과를 책임지는 역량',
     main: [
       '팀원에게 업무를 위임했던 경험을 말씀해 주세요. 어떤 기준으로 누구에게 무엇을 맡겼나요?',
@@ -911,7 +912,7 @@ const DATA = [
     tgtKeys: ['리더', '경력']
   },
   {
-    cat: 'lead', catLabel: '리더십역량',
+    cat: 'lead', catLabel: '리더십',
     name: '의사결정력', def: '불확실한 상황에서도 적시에 올바른 판단을 내리는 역량',
     main: [
       '불확실하거나 정보가 부족한 상황에서 중요한 결정을 내려야 했던 경험을 말씀해 주세요.',
@@ -926,7 +927,7 @@ const DATA = [
     tgtKeys: ['리더', '경력']
   },
   {
-    cat: 'lead', catLabel: '리더십역량',
+    cat: 'lead', catLabel: '리더십',
     name: '조직계발력', def: '구성원 성장을 지원하고 조직 역량을 높이는 역량',
     main: [
       '팀원이나 후배의 성장을 위해 직접 노력했던 경험을 말씀해 주세요.',
@@ -953,7 +954,7 @@ const DATA = [
       '해당 트렌드를 어디서 접하게 되었나요?',
       '본인이 직접 사용해본 경험이 있나요?'
     ],
-    targets: ['인턴·주니어'],
+    targets: ['인턴·신입'],
     tgtKeys: ['인턴']
   },
   {
@@ -967,7 +968,7 @@ const DATA = [
       '다른 제품과 차별점은 무엇이라고 생각하시나요?',
       '개선된다면 어떤 점이 바뀌면 좋을까요?'
     ],
-    targets: ['인턴·주니어'],
+    targets: ['인턴·신입'],
     tgtKeys: ['인턴']
   },
   {
@@ -1038,7 +1039,7 @@ const DATA = [
       '다른 회사가 아닌 우리 회사를 선택한 이유는 무엇인가요?',
       '입사 후 어떤 경험을 얻고 싶으신가요?'
     ],
-    targets: ['인턴·주니어'],
+    targets: ['인턴·신입'],
     tgtKeys: ['인턴']
   },
   {
@@ -1086,7 +1087,7 @@ const DATA = [
 
   // ── 조직 적합성 및 태도 ──
   {
-    cat: 'adapt', catLabel: '적응역량',
+    cat: 'adapt', catLabel: '책임감·태도',
     name: '갈등 경험과 해결', def: '팀 내 갈등 상황에서의 태도와 문제 해결 방식',
     main: [
       '팀 프로젝트에서 갈등이 있었던 경험이 있나요?'
@@ -1096,11 +1097,11 @@ const DATA = [
       '어떻게 해결하셨나요?',
       '그 경험에서 무엇을 배웠나요?'
     ],
-    targets: ['인턴·주니어'],
+    targets: ['인턴·신입'],
     tgtKeys: ['인턴']
   },
   {
-    cat: 'adapt', catLabel: '적응역량',
+    cat: 'adapt', catLabel: '책임감·태도',
     name: '의견 충돌 조율', def: '업무 중 의견 충돌 시 조율 방식과 결과',
     main: [
       '업무 중 의견 충돌이 있었던 경험과 해결 방식에 대해 말씀해 주세요.'
@@ -1114,7 +1115,7 @@ const DATA = [
     tgtKeys: ['경력']
   },
   {
-    cat: 'adapt', catLabel: '적응역량',
+    cat: 'adapt', catLabel: '책임감·태도',
     name: '우선순위 판단 기준', def: '업무 우선순위 충돌 시 판단 기준과 이해관계자 조율',
     main: [
       '업무 우선순위가 충돌할 때 어떻게 판단하시나요?'
@@ -1127,7 +1128,7 @@ const DATA = [
     tgtKeys: ['경력']
   },
   {
-    cat: 'adapt', catLabel: '적응역량',
+    cat: 'adapt', catLabel: '책임감·태도',
     name: '저성과 팀원 관리', def: '성과가 낮은 팀원을 이끄는 리더십과 접근 방식',
     main: [
       '성과가 낮은 팀원을 어떻게 관리하시나요?'
@@ -1140,7 +1141,7 @@ const DATA = [
     tgtKeys: ['리더']
   },
   {
-    cat: 'adapt', catLabel: '적응역량',
+    cat: 'adapt', catLabel: '책임감·태도',
     name: '조직 갈등 관리', def: '조직 내 갈등 상황에서 리더의 개입 기준과 방식',
     main: [
       '조직 내 갈등 상황을 어떻게 관리하시나요?'
@@ -1155,7 +1156,7 @@ const DATA = [
 ];
 
 // ─── State ───────────────────────────────────────────────────────────────────
-let activeCat = 'perf';
+let activeCat = 'all';
 let activeTgt = 'all';
 let searchQuery = '';
 
@@ -1213,7 +1214,7 @@ function render() {
   if (q || activeTgt !== 'all') {
     info.innerHTML = `<span>${filtered.length}개</span>의 역량이 검색되었습니다.`;
   } else {
-    const catName = {perf:'성과역량', rel:'관계역량', adapt:'적응역량', lead:'리더십역량', color:'색조 인사이트', motive:'지원동기', all:'전체'}[activeCat];
+    const catName = {perf:'업무능력·성과', rel:'커뮤니케이션·협업', adapt:'책임감·태도', lead:'리더십', color:'색조 인사이트', motive:'지원동기', all:'전체'}[activeCat];
     info.innerHTML = `<span>${catName}</span> · 총 <span>${filtered.length}개</span> 역량`;
   }
 
@@ -1293,7 +1294,7 @@ document.getElementById('catTabs').addEventListener('click', e => {
   if (!btn) return;
   activeCat = btn.dataset.cat;
   document.querySelectorAll('#catTabs .tab').forEach(t => {
-    t.className = 'tab ' + (t.dataset.cat !== 'all' ? `cat-${t.dataset.cat}` : '');
+    t.className = 'tab ' + (t.dataset.cat !== 'all' ? `cat-${t.dataset.cat}` : 'cat-all');
   });
   btn.classList.add('active');
   render();
@@ -1332,3 +1333,4 @@ render();
 </script>
 </body>
 </html>
+
