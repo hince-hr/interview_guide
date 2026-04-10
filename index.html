@@ -34,6 +34,18 @@
   --lead-light: #FDEEE9;
   --lead-mid: #F5B9A8;
 
+  --color: #C2478B;
+  --color-light: #FCE8F4;
+  --color-mid: #F0AEDD;
+
+  --motive: #D4831A;
+  --motive-light: #FEF3E2;
+  --motive-mid: #F5C87A;
+
+  --fit: #2E9E8A;
+  --fit-light: #E0F5F1;
+  --fit-mid: #8FD9CE;
+
   --q-main: #3D3D8F;
   --q-follow: #1A6B52;
   --q-target: #1B5A9A;
@@ -183,11 +195,13 @@ body {
 .tab:hover { background: var(--surface2); border-color: #C8C8D8; }
 
 /* category tabs */
-.tab.cat-all.active  { background: #1A1A2E; border-color: #1A1A2E; color: #FFF; }
 .tab.cat-perf.active { background: var(--perf-light); border-color: var(--perf); color: #4B2FCA; }
 .tab.cat-rel.active  { background: var(--rel-light);  border-color: var(--rel);  color: #0B6147; }
 .tab.cat-adapt.active{ background: var(--adapt-light);border-color: var(--adapt);color: #164E9A; }
 .tab.cat-lead.active { background: var(--lead-light); border-color: var(--lead); color: #8A2A15; }
+.tab.cat-color.active  { background: var(--color-light);  border-color: var(--color);  color: #82215F; }
+.tab.cat-motive.active { background: var(--motive-light); border-color: var(--motive); color: #8A4E00; }
+.tab.cat-fit.active    { background: var(--fit-light);    border-color: var(--fit);    color: #145C50; }
 
 /* target tabs */
 .tab.tgt.active {
@@ -244,6 +258,9 @@ body {
 .cat-stripe.rel  { background: var(--rel); }
 .cat-stripe.adapt{ background: var(--adapt); }
 .cat-stripe.lead { background: var(--lead); }
+.cat-stripe.color  { background: var(--color); }
+.cat-stripe.motive { background: var(--motive); }
+.cat-stripe.fit    { background: var(--fit); }
 
 .card-header-inner {
   flex: 1;
@@ -269,6 +286,9 @@ body {
 .card-cat-dot.rel  { background: var(--rel); }
 .card-cat-dot.adapt{ background: var(--adapt); }
 .card-cat-dot.lead { background: var(--lead); }
+.card-cat-dot.color  { background: var(--color); }
+.card-cat-dot.motive { background: var(--motive); }
+.card-cat-dot.fit    { background: var(--fit); }
 
 .card-name {
   font-size: 14.5px;
@@ -286,6 +306,9 @@ body {
 .card-cat-label.rel  { background: var(--rel-light);  color: var(--rel); }
 .card-cat-label.adapt{ background: var(--adapt-light);color: var(--adapt); }
 .card-cat-label.lead { background: var(--lead-light); color: var(--lead); }
+.card-cat-label.color  { background: var(--color-light);  color: var(--color); }
+.card-cat-label.motive { background: var(--motive-light); color: var(--motive); }
+.card-cat-label.fit    { background: var(--fit-light);    color: var(--fit); }
 
 .card-def {
   font-size: 12.5px;
@@ -398,8 +421,8 @@ mark.highlight {
 
   <!-- Header -->
   <div class="header">
-    <div class="header-title">🎙 면접 질문 가이드</div>
-    <div class="header-sub">역량별 경험면접 질문 카드 · 탭 선택 또는 검색으로 찾아보세요</div>
+    <div class="header-title">🎙 비바웨이브 면접 질문 가이드</div>
+    <div class="header-sub">면접 진행 중, 역량별/경력별 질문을 탭 선택 또는 검색으로 바로 찾아보실 수 있습니다</div>
   </div>
 
   <!-- STAR Tip -->
@@ -419,11 +442,13 @@ mark.highlight {
   <div class="tab-section">
     <div class="tab-section-label">역량 카테고리 필터</div>
     <div class="tab-group" id="catTabs">
-      <button class="tab cat-all"         data-cat="all">전체</button>
-      <button class="tab cat-perf" data-cat="perf">🎯 성과역량</button>
+      <button class="tab"                 data-cat="all">전체</button>
+      <button class="tab cat-perf active" data-cat="perf">🎯 성과역량</button>
       <button class="tab cat-rel"         data-cat="rel">🤝 관계역량</button>
       <button class="tab cat-adapt"       data-cat="adapt">🔄 적응역량</button>
       <button class="tab cat-lead"        data-cat="lead">🌟 리더십역량</button>
+      <button class="tab cat-color"       data-cat="color">🎨 색조 인사이트</button>
+      <button class="tab cat-motive"      data-cat="motive">💬 지원동기</button>
     </div>
   </div>
 
@@ -431,10 +456,10 @@ mark.highlight {
   <div class="tab-section">
     <div class="tab-section-label">추천 대상 필터</div>
     <div class="tab-group" id="tgtTabs">
-      <button class="tab tgt" data-tgt="all">전체</button>
-      <button class="tab tgt" data-tgt="신입">🌱 신입·주니어</button>
-      <button class="tab tgt" data-tgt="경력">💼 경력직</button>
-      <button class="tab tgt" data-tgt="리더">👑 리더·팀장급</button>
+      <button class="tab tgt active" data-tgt="all">전체</button>
+      <button class="tab tgt" data-tgt="인턴">🌱 인턴·주니어</button>
+      <button class="tab tgt" data-tgt="경력">💼 경력</button>
+      <button class="tab tgt" data-tgt="리더">👑 리더·리더급</button>
       <button class="tab tgt" data-tgt="전직군">✅ 전 직군 공통</button>
     </div>
   </div>
@@ -468,8 +493,8 @@ const DATA = [
       '본인의 행동이 주변 사람들에게 어떤 영향을 미쳤나요?',
       '어려움을 극복하면서 새롭게 얻은 깨달음이 있다면요?'
     ],
-    targets: ['주니어·신입 — 학교·팀 프로젝트 경험 중심', '경력직 — 위기 돌파·분위기 전환 사례 심화'],
-    tgtKeys: ['신입', '경력']
+    targets: ['인턴·주니어 — 학교·팀 프로젝트 경험 중심', '경력 — 위기 돌파·분위기 전환 사례 심화'],
+    tgtKeys: ['인턴', '경력']
   },
   {
     cat: 'perf', catLabel: '성과역량',
@@ -484,8 +509,8 @@ const DATA = [
       '목표를 이루기 위해 어떤 노력을 계획하고 있나요?',
       '목표를 달성하지 못한다면 어떻게 하시겠어요?'
     ],
-    targets: ['주니어 — 학업·자격증·대외활동 개인 목표 탐색', '경력직 — 커리어 목표·성과 지향성 파악'],
-    tgtKeys: ['신입', '경력']
+    targets: ['인턴·주니어 — 학업·자격증·대외활동 개인 목표 탐색', '경력 — 커리어 목표·성과 지향성 파악'],
+    tgtKeys: ['인턴', '경력']
   },
   {
     cat: 'perf', catLabel: '성과역량',
@@ -500,7 +525,7 @@ const DATA = [
       '그 결과는 어떠했나요?',
       '열정을 갖게 되는 본인만의 동기 요인이 있다면요?'
     ],
-    targets: ['전 직군 — 직무 연관 열정 경험 유도', '경력직 — 내재 동기 파악에 효과적'],
+    targets: ['전 직군 — 직무 연관 열정 경험 유도', '경력 — 내재 동기 파악에 효과적'],
     tgtKeys: ['전직군', '경력']
   },
   {
@@ -516,8 +541,8 @@ const DATA = [
       '진행과정 계획에서 가장 중요하게 생각한 사항은요?',
       '본인의 역할을 구체적으로 말씀해 주세요.'
     ],
-    targets: ['경력직·PM·기획 직군 — 구조화 능력 핵심 검증', '주니어 — 학교 팀 과제·대외활동으로 유도'],
-    tgtKeys: ['경력', '신입']
+    targets: ['경력·PM·기획 직군 — 구조화 능력 핵심 검증', '인턴·주니어 — 학교 팀 과제·대외활동으로 유도'],
+    tgtKeys: ['경력', '인턴']
   },
   {
     cat: 'perf', catLabel: '성과역량',
@@ -531,7 +556,7 @@ const DATA = [
       '정보를 분류하는 기준이나 체계가 있다면요?',
       '그 경험을 통해 전체적으로 효율성이 올라갔나요?'
     ],
-    targets: ['데이터·리서치·운영 직군 — 정보 체계화 검증', '경력직 — 업무 자산화 습관 파악'],
+    targets: ['데이터·리서치·운영 직군 — 정보 체계화 검증', '경력 — 업무 자산화 습관 파악'],
     tgtKeys: ['경력']
   },
   {
@@ -547,7 +572,7 @@ const DATA = [
       '실패의 원인을 어떻게 파악했나요?',
       '그 경험을 통해 무엇을 배울 수 있었나요?'
     ],
-    targets: ['전 직군 — 사고방식 검증에 탁월', '경력직 — 원인 분석 깊이·재발 방지 노력까지'],
+    targets: ['전 직군 — 사고방식 검증에 탁월', '경력 — 원인 분석 깊이·재발 방지 노력까지'],
     tgtKeys: ['전직군', '경력']
   },
   {
@@ -562,8 +587,8 @@ const DATA = [
       '그 결과는 어떠했나요?',
       '보람이 없거나 인정받지 못해도 계속할 수 있었던 이유는요?'
     ],
-    targets: ['주니어·신입 — 기본기 태도 검증', '운영·지원 직군 — 반복 업무 성실성 파악'],
-    tgtKeys: ['신입']
+    targets: ['인턴·주니어 — 기본기 태도 검증', '운영·지원 직군 — 반복 업무 성실성 파악'],
+    tgtKeys: ['인턴']
   },
   {
     cat: 'perf', catLabel: '성과역량',
@@ -592,8 +617,8 @@ const DATA = [
       '그런 상황이 발생한 원인이 무엇이라고 생각하나요?',
       '결과는 어떻게 됐나요?'
     ],
-    targets: ['경력직·리더 포지션 — 실행 주도력 파악', '주니어 — 개인 실행력 사례로 조정'],
-    tgtKeys: ['경력', '리더', '신입']
+    targets: ['경력·리더 포지션 — 실행 주도력 파악', '인턴·주니어 — 개인 실행력 사례로 조정'],
+    tgtKeys: ['경력', '리더', '인턴']
   },
   {
     cat: 'perf', catLabel: '성과역량',
@@ -607,7 +632,7 @@ const DATA = [
       '기존 방식과 비교해 어떤 변화를 통해 문제를 해결했나요?',
       '새로운 접근의 위험요소와 기회요소는 무엇이라 생각했나요?'
     ],
-    targets: ['기획·마케팅·개발 직군 — 혁신적 사고 검증', '경력직 — 변화 주도 사례 탐색'],
+    targets: ['기획·마케팅·개발 직군 — 혁신적 사고 검증', '경력 — 변화 주도 사례 탐색'],
     tgtKeys: ['경력']
   },
   {
@@ -622,7 +647,7 @@ const DATA = [
       '장애요인을 극복하기 위한 본인의 대응책은 무엇이었나요?',
       '이 경험을 통해 배운 점은 무엇인가요?'
     ],
-    targets: ['경력직·매니저급 — OKR·KPI 성과관리 검증', '리더 포지션 — 팀 단위 성과 추적 방식 파악'],
+    targets: ['경력·매니저급 — OKR·KPI 성과관리 검증', '리더 포지션 — 팀 단위 성과 추적 방식 파악'],
     tgtKeys: ['경력', '리더']
   },
   {
@@ -638,7 +663,7 @@ const DATA = [
       '지속적으로 자기개발을 하기 위한 구체적인 계획이 있나요?'
     ],
     targets: ['전 직군 필수 — 직무 이해도·전문성 수준 확인', '신입 — 스펙보다 학습 태도·방향성 중심'],
-    tgtKeys: ['전직군', '신입']
+    tgtKeys: ['전직군', '인턴']
   },
 
   // ── 관계역량 ──
@@ -684,7 +709,7 @@ const DATA = [
       '상대가 이해하지 못했을 때 어떻게 방식을 바꿨나요?',
       '청중이나 상대의 특성에 따라 소통 방법을 어떻게 조정했나요?'
     ],
-    targets: ['전 직군 — 어떤 직무에도 필수 검증 역량', '팀장·리더 — 방향 공유·설명 능력까지 확장'],
+    targets: ['전 직군 — 어떤 직무에도 필수 검증 역량', '리더 — 방향 공유·설명 능력까지 확장'],
     tgtKeys: ['전직군', '리더']
   },
   {
@@ -699,8 +724,8 @@ const DATA = [
       '만약 도움을 받았다면 어떤 점이 달라졌을 것 같나요?',
       '이 경험을 통해 무엇을 배웠나요?'
     ],
-    targets: ['스타트업·소규모 팀 — 자기 주도 업무 처리', '주니어 — 기본 태도·의지 파악'],
-    tgtKeys: ['신입']
+    targets: ['스타트업·소규모 팀 — 자기 주도 업무 처리', '인턴·주니어 — 기본 태도·의지 파악'],
+    tgtKeys: ['인턴']
   },
   {
     cat: 'rel', catLabel: '관계역량',
@@ -714,7 +739,7 @@ const DATA = [
       '자신의 의견과 타인의 의견 차이를 구체적으로 말씀해 주세요.',
       '이 경험을 통해 무엇을 배웠나요?'
     ],
-    targets: ['협업 중심 직군 — 팀워크 갈등 대응력 파악', '경력직 — 변화 환경에서의 적응 유연성'],
+    targets: ['협업 중심 직군 — 팀워크 갈등 대응력 파악', '경력 — 변화 환경에서의 적응 유연성'],
     tgtKeys: ['경력']
   },
   {
@@ -761,7 +786,7 @@ const DATA = [
       '규칙을 지킨 결과는 어떠했나요?',
       '이 경험을 통해 배운 것은 무엇인가요?'
     ],
-    targets: ['규제 산업·공공기관 — 필수 역량', '경력직 — 전 직장의 규정 준수 태도'],
+    targets: ['규제 산업·공공기관 — 필수 역량', '경력 — 전 직장의 규정 준수 태도'],
     tgtKeys: ['경력']
   },
   {
@@ -790,8 +815,8 @@ const DATA = [
     follow: [
       '해당 경험을 통해 스스로 생겨난 변화는 무엇인가요?'
     ],
-    targets: ['시니어·리더급 — 조직 내 비공식 영향력 파악', '주니어 — 기본 직업윤리·태도 확인'],
-    tgtKeys: ['리더', '신입']
+    targets: ['시니어·리더급 — 조직 내 비공식 영향력 파악', '인턴·주니어 — 기본 직업윤리·태도 확인'],
+    tgtKeys: ['리더', '인턴']
   },
   {
     cat: 'adapt', catLabel: '적응역량',
@@ -820,7 +845,7 @@ const DATA = [
       '가장 힘들었던 순간은 언제였고, 어떤 계기로 회복했나요?',
       '회복 과정에서 주변의 도움이 있었나요, 혼자 극복했나요?'
     ],
-    targets: ['내성과 함께 활용 — 견디기 vs 회복 구분해 확인', '경력직 — 번아웃 경험과 회복 패턴 파악'],
+    targets: ['내성과 함께 활용 — 견디기 vs 회복 구분해 확인', '경력 — 번아웃 경험과 회복 패턴 파악'],
     tgtKeys: ['경력']
   },
 
@@ -837,7 +862,7 @@ const DATA = [
       '각 이해관계자의 핵심 요구사항은 무엇이었나요?',
       '결과적으로 모두가 만족했나요?'
     ],
-    targets: ['PM·팀장급 — 크로스 펑셔널 팀 운영 핵심', '리더 포지션 — 합의 도출·방향 설정 능력'],
+    targets: ['PM·리더급 — 크로스 펑셔널 팀 운영 핵심', '리더 포지션 — 합의 도출·방향 설정 능력'],
     tgtKeys: ['리더']
   },
   {
@@ -852,7 +877,7 @@ const DATA = [
       '비전을 제시했을 때 반발이 있었다면 어떻게 대처했나요?',
       '비전을 공유하기 위해 가장 효과적이었던 방식은 무엇인가요?'
     ],
-    targets: ['리더·임원급 — 전략적 방향 설정 능력 집중', '팀장급 — 팀 단위 방향 설정·동기부여'],
+    targets: ['리더·임원급 — 전략적 방향 설정 능력 집중', '리더급 — 팀 단위 방향 설정·동기부여'],
     tgtKeys: ['리더']
   },
   {
@@ -867,7 +892,7 @@ const DATA = [
       '변화가 필요하다고 판단한 근거는 무엇이었나요?',
       '다음에 같은 상황이 온다면 다르게 접근하고 싶은 부분이 있나요?'
     ],
-    targets: ['혁신·전략·조직개편 포지션 — 변화 주도 검증', '팀장급 이상 — 변화 관리 경험·방식 파악'],
+    targets: ['혁신·전략·조직개편 포지션 — 변화 주도 검증', '리더급 이상 — 변화 관리 경험·방식 파악'],
     tgtKeys: ['리더']
   },
   {
@@ -882,7 +907,7 @@ const DATA = [
       '위임하기 어려웠던 경험이 있나요? 그 이유는요?',
       '직접 해야 하는 일과 위임해야 하는 일을 구분하는 기준은요?'
     ],
-    targets: ['팀장·리더 필수 — 위임 경험 없으면 적합성 재검토', '경력직 — 관리자로서의 성숙도 파악'],
+    targets: ['리더 필수 — 위임 경험 없으면 적합성 재검토', '경력 — 관리자로서의 성숙도 파악'],
     tgtKeys: ['리더', '경력']
   },
   {
@@ -897,7 +922,7 @@ const DATA = [
       '결정을 내리기까지 얼마나 시간이 걸렸나요?',
       '같은 상황을 다시 마주한다면 다른 결정을 내리겠어요?'
     ],
-    targets: ['리더·PM 포지션 — 판단력·속도·기준의 균형', '경력직 — 조직 내 결정 경험 깊이 검증'],
+    targets: ['리더·PM 포지션 — 판단력·속도·기준의 균형', '경력 — 조직 내 결정 경험 깊이 검증'],
     tgtKeys: ['리더', '경력']
   },
   {
@@ -912,13 +937,225 @@ const DATA = [
       '성장을 지원하면서 가장 어려웠던 점은 무엇인가요?',
       '조직 전체의 역량을 높이기 위해 시스템이나 문화적으로 바꾼 것이 있다면요?'
     ],
-    targets: ['팀장·HR·피플팀 리더 — 육성 경험 집중 검증', '시니어 경력직 — 조직 기여 방식·사람에 대한 관심'],
+    targets: ['리더·HR·피플팀 리더 — 육성 경험 집중 검증', '시니어 경력 — 조직 기여 방식·사람에 대한 관심'],
     tgtKeys: ['리더', '경력']
+  },
+
+  // ── 색조 인사이트 ──
+  {
+    cat: 'color', catLabel: '색조 인사이트',
+    name: '색조 트렌드 인식', def: '최근 색조 트렌드에 대한 관심과 이해도',
+    main: [
+      '최근 관심 있게 보고 있는 색조 트렌드는 무엇인가요?'
+    ],
+    follow: [
+      '왜 그 트렌드가 인상 깊었나요?',
+      '해당 트렌드를 어디서 접하게 되었나요?',
+      '본인이 직접 사용해본 경험이 있나요?'
+    ],
+    targets: ['인턴·주니어'],
+    tgtKeys: ['인턴']
+  },
+  {
+    cat: 'color', catLabel: '색조 인사이트',
+    name: '색조 제품 경험', def: '색조 제품 사용 경험과 소비자 시각의 분석력',
+    main: [
+      '최근 사용해본 색조 제품 중 기억에 남는 제품은 무엇인가요?'
+    ],
+    follow: [
+      '어떤 점이 좋았나요?',
+      '다른 제품과 차별점은 무엇이라고 생각하시나요?',
+      '개선된다면 어떤 점이 바뀌면 좋을까요?'
+    ],
+    targets: ['인턴·주니어'],
+    tgtKeys: ['인턴']
+  },
+  {
+    cat: 'color', catLabel: '색조 인사이트',
+    name: '색조 시장 변화 분석', def: '색조 시장의 구조적 변화와 소비자 행동에 대한 통찰',
+    main: [
+      '최근 색조 시장에서 가장 중요한 변화는 무엇이라고 보시나요?'
+    ],
+    follow: [
+      '해당 변화의 원인은 무엇이라고 생각하시나요?',
+      '소비자 행동 변화와 어떻게 연결된다고 보시나요?',
+      '브랜드는 어떻게 대응해야 한다고 보시나요?'
+    ],
+    targets: ['경력'],
+    tgtKeys: ['경력']
+  },
+  {
+    cat: 'color', catLabel: '색조 인사이트',
+    name: 'hince 포지션 분석', def: '브랜드 포지셔닝과 경쟁 구도에 대한 이해도',
+    main: [
+      '우리 브랜드(hince)의 현재 포지션을 어떻게 보시나요?'
+    ],
+    follow: [
+      '주요 타겟 고객은 누구라고 생각하시나요?',
+      '경쟁 브랜드는 어디라고 보시나요?',
+      '보완해야 할 점은 무엇이라고 생각하시나요?'
+    ],
+    targets: ['경력'],
+    tgtKeys: ['경력']
+  },
+  {
+    cat: 'color', catLabel: '색조 인사이트',
+    name: '색조 시장 방향성', def: '시장 전략적 관점에서 색조 산업의 미래 기회 분석',
+    main: [
+      '향후 색조 시장의 방향성과 핵심 기회는 무엇이라고 보시나요?'
+    ],
+    follow: [
+      '시장 변화의 주요 드라이버는 무엇이라고 보시나요?',
+      '브랜드 전략은 어떻게 변화해야 한다고 보시나요?',
+      '조직 차원에서 어떤 준비가 필요하다고 보시나요?'
+    ],
+    targets: ['리더'],
+    tgtKeys: ['리더']
+  },
+  {
+    cat: 'color', catLabel: '색조 인사이트',
+    name: '색조 브랜드 성장 요소', def: '색조 브랜드 지속 성장을 위한 핵심 전략 판단력',
+    main: [
+      '색조 브랜드가 지속적으로 성장하기 위해 가장 중요한 요소는 무엇이라고 보시나요?'
+    ],
+    follow: [
+      '단기 vs 장기 관점에서 어떻게 다르게 접근해야 한다고 보시나요?',
+      '브랜드/제품/채널 중 어디에 집중해야 한다고 보시나요?'
+    ],
+    targets: ['리더'],
+    tgtKeys: ['리더']
+  },
+
+  // ── 지원 동기 및 이직 맥락 ──
+  {
+    cat: 'motive', catLabel: '지원동기·이직맥락',
+    name: '비바웨이브 지원 동기', def: '브랜드에 대한 관심과 입사 의지 진정성',
+    main: [
+      '비바웨이브에 지원하게 된 이유는 무엇인가요?'
+    ],
+    follow: [
+      '우리 브랜드를 언제 처음 알게 되었나요?',
+      '다른 회사가 아닌 우리 회사를 선택한 이유는 무엇인가요?',
+      '입사 후 어떤 경험을 얻고 싶으신가요?'
+    ],
+    targets: ['인턴·주니어'],
+    tgtKeys: ['인턴']
+  },
+  {
+    cat: 'motive', catLabel: '지원동기·이직맥락',
+    name: '이직 계기', def: '이직의 맥락과 다음 스텝에 대한 방향성',
+    main: [
+      '이직을 고려하게 된 계기는 무엇인가요?'
+    ],
+    follow: [
+      '현재 회사에서 아쉬웠던 점은 무엇인가요?',
+      '다음 회사에서 가장 중요하게 보는 기준은 무엇인가요?',
+      '이번 이직을 통해 얻고 싶은 것은 무엇인가요?'
+    ],
+    targets: ['경력'],
+    tgtKeys: ['경력']
+  },
+  {
+    cat: 'motive', catLabel: '지원동기·이직맥락',
+    name: '비바웨이브 선택 이유', def: '브랜드 이해도와 기여 의지',
+    main: [
+      '여러 회사 중 비바웨이브를 선택한 이유는 무엇인가요?'
+    ],
+    follow: [
+      '우리 브랜드에 대해 어떻게 생각하시나요?',
+      '입사 후 기대하는 역할은 무엇인가요?',
+      '본인이 기여할 수 있는 부분은 무엇이라고 생각하시나요?'
+    ],
+    targets: ['경력'],
+    tgtKeys: ['경력']
+  },
+  {
+    cat: 'motive', catLabel: '지원동기·이직맥락',
+    name: '이직 결정 시점과 목표', def: '리더로서의 커리어 전환 맥락과 비전',
+    main: [
+      '이 시점에서 이직을 결정하신 이유는 무엇인가요?'
+    ],
+    follow: [
+      '현재 조직에서 더 하지 않은 이유는 무엇인가요?',
+      '다음 조직에서 어떤 역할을 기대하고 계신가요?',
+      '리더로서 이루고 싶은 목표는 무엇인가요?'
+    ],
+    targets: ['리더'],
+    tgtKeys: ['리더']
+  },
+
+  // ── 조직 적합성 및 태도 ──
+  {
+    cat: 'adapt', catLabel: '적응역량',
+    name: '갈등 경험과 해결', def: '팀 내 갈등 상황에서의 태도와 문제 해결 방식',
+    main: [
+      '팀 프로젝트에서 갈등이 있었던 경험이 있나요?'
+    ],
+    follow: [
+      '어떤 상황이었나요?',
+      '어떻게 해결하셨나요?',
+      '그 경험에서 무엇을 배웠나요?'
+    ],
+    targets: ['인턴·주니어'],
+    tgtKeys: ['인턴']
+  },
+  {
+    cat: 'adapt', catLabel: '적응역량',
+    name: '의견 충돌 조율', def: '업무 중 의견 충돌 시 조율 방식과 결과',
+    main: [
+      '업무 중 의견 충돌이 있었던 경험과 해결 방식에 대해 말씀해 주세요.'
+    ],
+    follow: [
+      '상대방과 어떻게 조율하셨나요?',
+      '결과는 어땠나요?',
+      '다시 같은 상황이 온다면 어떻게 하시겠습니까?'
+    ],
+    targets: ['경력'],
+    tgtKeys: ['경력']
+  },
+  {
+    cat: 'adapt', catLabel: '적응역량',
+    name: '우선순위 판단 기준', def: '업무 우선순위 충돌 시 판단 기준과 이해관계자 조율',
+    main: [
+      '업무 우선순위가 충돌할 때 어떻게 판단하시나요?'
+    ],
+    follow: [
+      '기준은 무엇인가요?',
+      '이해관계자가 많을 때 어떻게 조율하시나요?'
+    ],
+    targets: ['경력'],
+    tgtKeys: ['경력']
+  },
+  {
+    cat: 'adapt', catLabel: '적응역량',
+    name: '저성과 팀원 관리', def: '성과가 낮은 팀원을 이끄는 리더십과 접근 방식',
+    main: [
+      '성과가 낮은 팀원을 어떻게 관리하시나요?'
+    ],
+    follow: [
+      '개선을 위한 접근 방식은 무엇인가요?',
+      '단기간 vs 장기적으로 어떻게 나누어 대응하시나요?'
+    ],
+    targets: ['리더'],
+    tgtKeys: ['리더']
+  },
+  {
+    cat: 'adapt', catLabel: '적응역량',
+    name: '조직 갈등 관리', def: '조직 내 갈등 상황에서 리더의 개입 기준과 방식',
+    main: [
+      '조직 내 갈등 상황을 어떻게 관리하시나요?'
+    ],
+    follow: [
+      '갈등을 방치했을 때의 리스크는 무엇이라고 보시나요?',
+      '리더로서 개입 기준은 무엇인가요?'
+    ],
+    targets: ['리더'],
+    tgtKeys: ['리더']
   }
 ];
 
 // ─── State ───────────────────────────────────────────────────────────────────
-let activeCat = 'all';
+let activeCat = 'perf';
 let activeTgt = 'all';
 let searchQuery = '';
 
@@ -976,7 +1213,7 @@ function render() {
   if (q || activeTgt !== 'all') {
     info.innerHTML = `<span>${filtered.length}개</span>의 역량이 검색되었습니다.`;
   } else {
-    const catName = {perf:'성과역량', rel:'관계역량', adapt:'적응역량', lead:'리더십역량', all:'전체'}[activeCat];
+    const catName = {perf:'성과역량', rel:'관계역량', adapt:'적응역량', lead:'리더십역량', color:'색조 인사이트', motive:'지원동기', all:'전체'}[activeCat];
     info.innerHTML = `<span>${catName}</span> · 총 <span>${filtered.length}개</span> 역량`;
   }
 
@@ -1056,8 +1293,7 @@ document.getElementById('catTabs').addEventListener('click', e => {
   if (!btn) return;
   activeCat = btn.dataset.cat;
   document.querySelectorAll('#catTabs .tab').forEach(t => {
-    const catKey = t.dataset.cat;
-    t.className = 'tab ' + (catKey === 'all' ? 'cat-all' : `cat-${catKey}`);
+    t.className = 'tab ' + (t.dataset.cat !== 'all' ? `cat-${t.dataset.cat}` : '');
   });
   btn.classList.add('active');
   render();
